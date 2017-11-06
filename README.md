@@ -39,6 +39,10 @@ Run the build
 draft up
 ```
 
+After build should be available via ingress
+
+- http://go-demo.k8s.local/Joe
+
 Note:
 
 In another window you can monior the build output
