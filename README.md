@@ -4,12 +4,11 @@ Dummy project to demonstrate Kubernetes Draft
 
 ## Install pre-requiste tools
 
-- Minikube
-- Kubectl
-- Draft
-- Stern
+- [Minikube](https://kubernetes.io/docs/tasks/tools/install-minikube/)
+- [Draft](https://github.com/Azure/draft/blob/master/docs/install.md)
+- [Stern](https://github.com/wercker/stern)
 
-## Run demo
+## Configure environment
 
 ```
 minikube start
@@ -24,4 +23,26 @@ Need entry in the hosts file to resolve application location
 ```
 sudo su -
 echo "$(minikube ip) go-demo.k8s.local" >> /etc/hosts
+```
+
+## Run the demo
+
+Initialize the project
+
+```
+draft create
+```
+
+Run the build
+
+```
+draft up
+```
+
+Note:
+
+In another window you can monior the build output
+
+```
+stern -n kube-system draftd
 ```
