@@ -43,9 +43,9 @@ After build should be available via ingress
 
 - http://go-demo.k8s.local/Joe
 
-Note:
+**Note:**
 
-In another window you can monior the build output
+In another window you can monitor the build output
 
 ```
 stern -n kube-system draftd

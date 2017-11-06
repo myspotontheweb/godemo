@@ -2,3 +2,4 @@
 Dockerfile
 charts
 draft.toml
+.draftignore
