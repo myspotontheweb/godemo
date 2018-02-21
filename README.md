@@ -45,6 +45,14 @@ After build should be available via ingress
 
 **Note:**
 
+In version v0.10.1 there appears to be a bug where an Ingres is not being created. The helm release can be enables as follows to fix this:
+
+```
+helm upgrade go-demo charts/go --set ingress.enabled=true --set basedomain=k8s.local
+```
+
+### Build logging
+
 In another window you can monitor the build output
 
 ```
