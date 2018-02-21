@@ -45,7 +45,7 @@ After build should be available via ingress
 
 **Note:**
 
-In version v0.10.1 there appears to be a bug where an Ingress is not being created. Apply the following work-around which patches the helm release
+When using Draft v0.10.1, I encountered a bug [where an Ingress is not being created](https://github.com/Azure/draft/issues/336). The following work-around will patch the helm release. 
 
 ```
 helm upgrade go-demo charts/go --set ingress.enabled=true --set basedomain=k8s.local
