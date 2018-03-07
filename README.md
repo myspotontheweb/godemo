@@ -10,19 +10,30 @@ Dummy project to demonstrate Kubernetes Draft
 
 ## Configure environment
 
+Create a minikube environmnent with a registry and ingress controller
+
 ```
 minikube start
 minikube addons enable registry
 minikube addons enable ingress
 helm init
-draft init --auto-accept --ingress-enabled
+draft init --ingress-enabled --auto-accept
 ```
 
-Need entry in the hosts file to resolve application location
+The ingress-enabled flag is [not working](https://github.com/Azure/draft/issues/336), making the following patch is necessary
 
 ```
-sudo su -
-echo "$(minikube ip) go-demo.k8s.local" >> /etc/hosts
+kubectl patch deployment/draftd --type='json' \
+-p='[{"op": "replace", "path": "/spec/template/spec/containers/0/args/4", "value": "--ingress-enabled=true"}]' \
+--namespace=kube-system
+```
+
+The basedomain can be set to use IP address of the minikube VM
+
+```
+kubectl patch deployment/draftd --type='json' \
+-p="[{'op': 'replace', 'path': '/spec/template/spec/containers/0/args/3', 'value': '--basedomain=$(minikube ip).nip.io'}]" \
+--namespace=kube-system
 ```
 
 ## Run the demo
@@ -39,17 +50,12 @@ Run the build
 draft up
 ```
 
-After build should be available via ingress
-
-- http://go-demo.k8s.local/Joe
-
-**Note:**
-
-When using Draft v0.10.1, I encountered a bug [where an Ingress is not being created](https://github.com/Azure/draft/issues/336). The following work-around will patch the helm release. 
+Once the build is completed, the application should be exposed via an Ingress
 
 ```
-helm upgrade go-demo charts/go --set ingress.enabled=true --set basedomain=k8s.local
+echo "http://go-demo.$(minikube ip).nip.io/Joe"
 ```
+
 
 ### Build logging
 
