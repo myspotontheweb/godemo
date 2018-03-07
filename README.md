@@ -1,3 +1,16 @@
+Table of Contents
+=================
+
+   * [go-demo](#go-demo)
+      * [Install pre-requiste tools](#install-pre-requiste-tools)
+      * [Configure environment](#configure-environment)
+      * [Run the demo](#run-the-demo)
+   * [Under the hood](#under-the-hood)
+      * [Build logging](#build-logging)
+      * [Helm integration](#helm-integration)
+
+Created by [gh-md-toc](https://github.com/ekalinin/github-markdown-toc)
+
 # go-demo
 
 Dummy project to demonstrate Kubernetes Draft
@@ -56,16 +69,18 @@ Once the build is completed, the application should be exposed via an Ingress
 echo "http://go-demo.$(minikube ip).nip.io/Joe"
 ```
 
+# Under the hood
 
-### Build logging
+## Build logging
 
-In another window you can monitor the build output
+The Docker build details can be monitored by tailing the draftd pod logs
+
 
 ```
 stern -n kube-system draftd
 ```
 
-## Under the hood
+## Helm integration
 
 One nice feature of Draft is that it is built on top of helm. The```draft up``` command will both build the docker image
 and delploy it using helm.  Furthermore the server component of draft is also managed using helm.
