@@ -33,7 +33,9 @@ helm init
 draft init --ingress-enabled --auto-accept
 ```
 
-The ingress-enabled flag is [not working](https://github.com/Azure/draft/issues/336), making the following patch is necessary
+**Patch work-around**
+
+The ingress-enabled flag is [not working](https://github.com/Azure/draft/issues/336), on minikube, making the following patch necessary:
 
 ```
 kubectl patch deployment/draftd --type='json' \
