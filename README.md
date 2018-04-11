@@ -18,7 +18,7 @@ Dummy project to demonstrate Kubernetes Draft
 ## Install pre-requiste tools
 
 - [Minikube](https://kubernetes.io/docs/tasks/tools/install-minikube/)
-- [Draft](https://github.com/Azure/draft/blob/master/docs/install.md)
+- [Draft](https://draft.sh/)
 - [Stern](https://github.com/wercker/stern)
 
 ## Configure environment
