@@ -77,3 +77,11 @@ http://localhost:34921/Joe
 > Waiting for issue [#223](https://github.com/Azure/draft/issues/223) to be delivered, then will be able to assign 
 > helm overrides that will enable to deployment of an Ingress to expose the application.
 
+## Watcher not working
+
+Couple of open issues. This was working in v0.11.0
+
+- [#341](https://github.com/Azure/draft/issues/341)
+- [#3](https://github.com/Azure/draft/issues/3)
+
+This a pity as we'd like to redeploy automatically upon code changes.
