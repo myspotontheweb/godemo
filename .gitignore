@@ -4,3 +4,4 @@ charts
 draft.toml
 .draftignore
 *.swp
+.dockerignore
