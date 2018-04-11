@@ -26,7 +26,7 @@ minikube start
 minikube addons enable ingress
 ```
 
-Install helm and configure draft
+Install helm and configure draft and docker to use minikube
 
 ```
 helm init
