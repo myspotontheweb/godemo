@@ -5,9 +5,6 @@ Table of Contents
       * [Install pre-requiste tools](#install-pre-requiste-tools)
       * [Configure environment](#configure-environment)
       * [Run the demo](#run-the-demo)
-   * [Under the hood](#under-the-hood)
-      * [Build logging](#build-logging)
-      * [Helm integration](#helm-integration)
 
 Created by [gh-md-toc](https://github.com/ekalinin/github-markdown-toc)
 
