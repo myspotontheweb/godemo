@@ -60,14 +60,14 @@ BUILD_ID                  	CONTEXT_ID	CREATED_AT              	RELEASE
 To access the application, you can run a proxy:
 
 ```
-$ draft connect
-Connect to go:8080 on localhost:34921
+$ draft connect -p 8080:8080
+Connect to go:8080 on localhost:8080
 [go]: + exec app
 ```
 
 And see the output locally:
 
-http://localhost:34921/Joe
+http://localhost:8080/Joe
 
 ## Bugs
 
