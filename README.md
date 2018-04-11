@@ -69,7 +69,11 @@ And see the output locally:
 
 http://localhost:34921/Joe
 
+## Bugs
+
 ## Expose the application via an Ingress
 
-TODO
+> TODO: 
+> Waiting for issue [#223](https://github.com/Azure/draft/issues/223) to be delivered, then will be able to assign 
+> helm overrides that will enable to deployment of an Ingress to expose the application.
 
