@@ -19,25 +19,30 @@ Dummy project to demonstrate Kubernetes Draft
 
 ## Configure environment
 
-Create a minikube environmnent with an ingress controller
+Create a minikube environmnent with an ingress controller, helm and draft installed
 
 ```
 minikube start
 minikube addons enable ingress
-```
-
-Install helm and configure draft and docker to use minikube
-
-```
 helm init
 draft init 
+```
+Wait until all the pods are running and k8s has reached a steady state
+
+```
+kubectl get pods --all-namespaces -w
+```
+
+Configure docker client to use the docker engine running within the minikube VM.
+
+```
 eval $(minikube docker-env)
 draft config set disable-push-warning 1
 ```
 
 ## Run the demo
 
-Initialize the project
+Initialize the project, generates a helm chart and docker file
 
 ```
 draft create
@@ -49,12 +54,10 @@ Run the build
 draft up
 ```
 
-Check the build history
+In another window you can monitor the build
 
 ```
-$ draft history
-BUILD_ID                  	CONTEXT_ID	CREATED_AT              	RELEASE
-01CATRV0P9EYF8C7XJ9FCA2KJJ	903C5CC089	Wed Apr 11 17:33:38 2018	go-demo
+draft logs --tail
 ```
 
 To access the application, you can run a proxy:
@@ -68,6 +71,19 @@ Connect to go:8080 on localhost:8080
 And see the output locally:
 
 http://localhost:8080/Joe
+
+## Other features
+
+### Build logs
+
+Check the build history
+
+```
+$ draft history
+BUILD_ID                  	CONTEXT_ID	CREATED_AT              	RELEASE
+01CATRV0P9EYF8C7XJ9FCA2KJJ	903C5CC089	Wed Apr 11 17:33:38 2018	go-demo
+```
+
 
 ## Bugs
 
