@@ -93,6 +93,12 @@ BUILD_ID                  	CONTEXT_ID	CREATED_AT              	RELEASE
 > Waiting for issue [#223](https://github.com/Azure/draft/issues/223) to be delivered, then will be able to assign 
 > helm overrides that will enable to deployment of an Ingress to expose the application.
 
+If Draft supported the setting of overrides then the ingress could be enabled, but running helm as follows
+
+```
+helm install charts/go --set image.repository=go-demo --set image.tag=XXXX --set ingress.enabled=true --set basedomain=$(minikube ip).nip.io
+```
+
 ### Watcher not working
 
 Couple of open issues. This was working in v0.11.0
