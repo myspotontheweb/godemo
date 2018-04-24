@@ -219,8 +219,8 @@ eval $(aws ecr get-login --no-include-email)
 Setup credentials in cluster's "default" service account 
 
 ```
-kubectl create secret generic dockerhub --type=kubernetes.io/dockerconfigjson --from-file .dockerconfigjson=$HOME/.docker/config.json
-kubectl patch serviceaccount default -p '{"imagePullSecrets": [{"name": "dockerhub"}]}'
+kubectl create secret generic registrycreds --type=kubernetes.io/dockerconfigjson --from-file .dockerconfigjson=$HOME/.docker/config.json
+kubectl patch serviceaccount default -p '{"imagePullSecrets": [{"name": "registrycreds"}]}'
 ```
 
 Configure Draft to use ECR registry
