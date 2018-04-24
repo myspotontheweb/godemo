@@ -164,7 +164,12 @@ aws configure --profile devenv
 
 NOTE:
 
-> TODO: Need to document the IAM permissions for accessing ECR
+The user account requires the one of the following IAM permissions (dependent on level of access required)
+
+- AmazonEC2ContainerRegistryReadOnly
+- AmazonEC2ContainerRegistryPowerUser
+- AmazonEC2ContainerRegistryFullAccess
+
 
 ## Configure software
 
