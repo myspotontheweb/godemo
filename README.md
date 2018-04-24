@@ -136,7 +136,7 @@ The following section documents learnings in how to use draft with AWS infrastru
 ```
 VERSION=2.6.2
 
-curl -LO https://storage.googleapis.com/kubernetes-helm/helm-$VERSION-linux-amd64.tar.gz
+curl -LO https://storage.googleapis.com/kubernetes-helm/helm-v$VERSION-linux-amd64.tar.gz
 tar -zxvf helm-v$VERSION-linux-amd64.tar.gz
 sudo mv linux-amd64/helm /usr/local/bin/helm-$VERSION
 sudo ln -sf /usr/local/bin/helm-$VERSION /usr/local/bin/helm
