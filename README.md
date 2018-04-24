@@ -226,8 +226,14 @@ kubectl patch serviceaccount default -p '{"imagePullSecrets": [{"name": "dockerh
 Configure Draft to use ECR registry
 
 ```
+# Only needs to be done once
 draft init
-draft config set registry $AWS_ACCOUNT.dkr.ecr.$REGION.amazonaws.com
+
+# Check the repository list
+aws ecr describe-repositories
+
+# Point draft at the chosen registry
+draft config set registry XXXXXX.dkr.ecr.YYYYY.amazonaws.com
 ``` 
 
 ### Generate Dockerfile and Helm chart
