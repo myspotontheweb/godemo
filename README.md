@@ -254,3 +254,10 @@ Deploy code
 ```
 draft up
 ```
+
+Check to see where it's deployed
+
+```
+helm ls
+kubectl get ingress
+```
