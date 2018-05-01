@@ -222,8 +222,12 @@ Install credentials in the "default" service account of the target namespace
 CTX=minikube
 NS=default
 
-kubectl --context $CTX -n $NS create secret generic registrycreds --type=kubernetes.io/dockerconfigjson --from-file .dockerconfigjson=$HOME/.docker/config.json
-kubectl --context $CTX -n $NS patch serviceaccount default -p '{"imagePullSecrets": [{"name": "registrycreds"}]}'
+kubectl config set-context $CTX --namespace $NS
+kubectl config use-context $CTX
+
+kubectl delete secret registrycreds
+kubectl create secret generic registrycreds --type=kubernetes.io/dockerconfigjson --from-file .dockerconfigjson=$HOME/.docker/config.json
+kubectl patch serviceaccount default -p '{"imagePullSecrets": [{"name": "registrycreds"}]}'
 ```
 
 Configure Draft to use ECR registry
