@@ -1,7 +1,2 @@
-.draftignore
-Dockerfile
-charts
-draft.toml
-.draftignore
+skaffold.yaml
 *.swp
-.dockerignore
