@@ -68,3 +68,8 @@ Start skaffold
 skaffold dev
 ```
 
+The code will be exposed on custom domain mapped to the Minikube IP address:
+
+- http://go-demo.192.168.39.50.nip.io/
+
+
