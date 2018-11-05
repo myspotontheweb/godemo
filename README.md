@@ -51,7 +51,7 @@ docker build -t registry-docker-registry:5000/go-demo:latest .
 docker push registry-docker-registry:5000/go-demo:latest
 ```
 
-Deploy image using localhost
+Deploy image using localhost (Workaround the insecure registry)
 
 ```
 kubectl run go-demo --image localhost:30500/go-demo:latest --port 8080
