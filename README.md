@@ -26,10 +26,35 @@ Create a minikube environmnent
 
 ```
 minikube start --vm-driver kvm2 --memory 4096 --kubernetes-version v1.9.8
+```
+
+Configure additional software
+
+```
 minikube addons enable ingress
 helm init
+helm install stable/docker-registry -n registry --namespace default --set service.nodePort=30500,service.type=NodePort
+```
+
+Expose remote services locally
+
+```
+sudo kubefwd services --namespace default
 ```
 
 ## Build the project
 
-WIP
+Build and push image
+
+```
+docker build -t registry-docker-registry:5000/go-demo:latest .
+docker push registry-docker-registry:5000/go-demo:latest
+```
+
+Deploy image using localhost
+
+```
+kubectl run go-demo --image localhost:30500/go-demo:latest --port 8080
+kubectl expose deployment go-demo
+```
+
