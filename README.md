@@ -25,51 +25,11 @@ Dummy project to demonstrate local kubernetes development using minikube
 Create a minikube environmnent 
 
 ```
-minikube start
+minikube start --vm-driver kvm2 --memory 4096 --kubernetes-version v1.9.8
 minikube addons enable ingress
 helm init
 ```
 
-## Configure Skaffold
-
-```
-cat <<END > skaffold.yaml
-apiVersion: skaffold/v1alpha2
-kind: Config
-build:
-  artifacts:
-  - imageName: go-demo
-deploy:
-  helm:
-    releases:
-      - name: go-demo
-        chartPath: charts/go-demo
-        namespace: default
-        values:
-          image.name: go-demo
-        setValues:
-          service.port: 8080
-          ingress.enabled: true
-          ingress.hosts[0]: go-demo.$(minikube ip).nip.io
-END
-```
-
 ## Build the project
 
-Using the minkube docker engine (do not push images)
-
-```
-eval $(minikube docker-env)
-```
-
-Start skaffold
-
-```
-skaffold dev
-```
-
-The code will be exposed on custom domain mapped to the Minikube IP address:
-
-- http://go-demo.192.168.39.50.nip.io/
-
-
+WIP
