@@ -12,5 +12,5 @@ deploy:
         values:
           image.name: go-demo
         setValues:
-          ingress.enabled: true
+          ingress.enabled: false
           basedomain: 192.168.39.123.nip.io

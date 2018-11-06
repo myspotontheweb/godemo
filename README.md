@@ -1,3 +1,4 @@
+
 Table of Contents
 =================
 
@@ -5,6 +6,7 @@ Table of Contents
       * [Install pre-requiste tools](#install-pre-requiste-tools)
       * [Start a Kubernetes cluster](#start-a-kubernetes-cluster)
       * [Build the project](#build-the-project)
+         * [Enable ingress](#enable-ingress)
 
 Created by [gh-md-toc](https://github.com/ekalinin/github-markdown-toc)
 
@@ -46,5 +48,34 @@ Run a Dev session
 
 ```
 skaffold dev
+```
+
+App should be available via a port mapping
+
+- http://localhost:8080
+
+### Enable ingress
+
+Edit the skaffold file to define the basedomain supported by minikube
+
+```
+cat << END > skaffold.yaml
+apiVersion: skaffold/v1alpha5
+kind: Config
+build:
+  artifacts:
+  - image: go-demo
+deploy:
+  helm:
+    releases:
+      - name: go-demo
+        chartPath: chart
+        namespace: default
+        values:
+          image.name: go-demo
+        setValues:
+          ingress.enabled: true
+          basedomain: $(minikube ip).nip.io
+END
 ```
 
