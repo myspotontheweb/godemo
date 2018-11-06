@@ -1,0 +1,16 @@
+apiVersion: skaffold/v1alpha5
+kind: Config
+build:
+  artifacts:
+  - image: go-demo
+deploy:
+  helm:
+    releases:
+      - name: go-demo
+        chartPath: chart
+        namespace: default
+        values:
+          image.name: go-demo
+        setValues:
+          ingress.enabled: true
+          basedomain: 192.168.39.123.nip.io
