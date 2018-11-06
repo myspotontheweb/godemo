@@ -4,7 +4,6 @@ Table of Contents
    * [go-demo](#go-demo)
       * [Install pre-requiste tools](#install-pre-requiste-tools)
       * [Start a Kubernetes cluster](#start-a-kubernetes-cluster)
-      * [Configure Skaffold](#configure-skaffold)
       * [Build the project](#build-the-project)
 
 Created by [gh-md-toc](https://github.com/ekalinin/github-markdown-toc)
@@ -33,28 +32,19 @@ Configure additional software
 ```
 minikube addons enable ingress
 helm init
-helm install stable/docker-registry -n registry --namespace default --set service.nodePort=30500,service.type=NodePort
-```
-
-Expose remote services locally
-
-```
-sudo kubefwd services --namespace default
 ```
 
 ## Build the project
 
-Build and push image
+Configure environment to use docker inside the minikube VM
 
 ```
-docker build -t registry-docker-registry:5000/go-demo:latest .
-docker push registry-docker-registry:5000/go-demo:latest
+eval $(minikube docker-env)
 ```
 
-Deploy image using localhost (Workaround the insecure registry)
+Run a Dev session
 
 ```
-kubectl run go-demo --image localhost:30500/go-demo:latest --port 8080
-kubectl expose deployment go-demo
+skaffold dev
 ```
 
