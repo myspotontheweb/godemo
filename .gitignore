@@ -1,2 +1,11 @@
-skaffold.yaml
 *.swp
+#
+# Files associated with Draft
+#
+.dockerignore
+.draft-tasks.toml
+.draftignore
+Dockerfile
+charts/
+draft.toml
+#
