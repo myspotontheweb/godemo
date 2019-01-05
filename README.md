@@ -26,7 +26,7 @@ Dummy project to demonstrate local kubernetes development using minikube
 Create a minikube environmnent 
 
 ```
-minikube start --vm-driver kvm2 --memory 4096 --kubernetes-version v1.9.8
+minikube start --vm-driver kvm2 --cpus 2 --memory 4096 
 ```
 
 Configure additional software
