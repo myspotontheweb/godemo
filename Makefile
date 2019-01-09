@@ -18,6 +18,6 @@ Dockerfile: chart
 	cp chart/build/$(TECH)/travis.yml .travis.yml
 
 clean:
-	rm Dockerfile
-	rm .travis.yml
+	rm -f Dockerfile
+	rm -f .travis.yml
 	rm -rf chart
