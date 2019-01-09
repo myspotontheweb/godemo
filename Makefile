@@ -1,5 +1,6 @@
 
 NAME=go-demo
+TECH=go
 
 .PHONY: generate clean
 
@@ -11,10 +12,10 @@ chart:
 	@find chart -type f -exec sed "s/__NAME__/$(NAME)/g" {} --in-place \;
 
 Dockerfile: chart
-	cp chart/build/go/Dockerfile Dockerfile
+	cp chart/build/$(TECH)/Dockerfile Dockerfile
 
 .travis.yml: chart
-	cp chart/build/go/travis.yml .travis.yml
+	cp chart/build/$(TECH)/travis.yml .travis.yml
 
 clean:
 	rm Dockerfile
