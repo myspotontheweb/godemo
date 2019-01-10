@@ -2,12 +2,12 @@
 Table of Contents
 =================
 
-   * [go-demo](#go-demo)
+   * [godemo](#godemo)
       * [Install pre-requiste tools](#install-pre-requiste-tools)
       * [Start a Kubernetes cluster](#start-a-kubernetes-cluster)
       * [Getting started](#getting-started)
         
-# go-demo
+# godemo
 
 Dummy project to demonstrate local kubernetes development using minikube
 
