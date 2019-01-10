@@ -39,16 +39,15 @@ helm init
 
 ## Running skaffold
 
-Configure environment to use docker inside the minikube VM
+Generate additional files
 
 ```
-eval $(minikube docker-env)
+make
 ```
 
 Run a Dev session
 
 ```
-make
 skaffold dev
 ```
 
