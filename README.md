@@ -60,6 +60,8 @@ App should be available via a port mapping
 
 ## Install private registry
 
+NOTE: This requires cluster admin privs. Ideally a k8s cluster used for development will be setup in advance
+
 When running on a hosted cluster check available storage classes
 
 ```
