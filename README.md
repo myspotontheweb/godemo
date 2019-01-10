@@ -6,7 +6,7 @@ Table of Contents
    * [Quickstart](#quickstart)
       * [Install pre-requiste tools](#install-pre-requiste-tools)
       * [Start a Kubernetes cluster](#start-a-kubernetes-cluster)
-      * [Getting started](#getting-started)
+      * [Running skaffold](#running-skaffold)
    * [Hosted kubernetes cluster with a private registry](#hosted-kubernetes-cluster-with-a-private-registry)
       * [Install private registry](#install-private-registry)
       * [Deploy application](#deploy-application)
@@ -37,7 +37,7 @@ minikube start --vm-driver kvm2 --cpus 2 --memory 4096
 helm init
 ```
 
-## Getting started
+## Running skaffold
 
 Configure environment to use docker inside the minikube VM
 
