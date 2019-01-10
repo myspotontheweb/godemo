@@ -2,10 +2,15 @@
 Table of Contents
 =================
 
+   * [Table of Contents](#table-of-contents)
    * [godemo](#godemo)
       * [Install pre-requiste tools](#install-pre-requiste-tools)
       * [Start a Kubernetes cluster](#start-a-kubernetes-cluster)
       * [Getting started](#getting-started)
+   * [Hosted kubernetes cluster with a private registry](#hosted-kubernetes-cluster-with-a-private-registry)
+      * [Install private registry](#install-private-registry)
+      * [Deploy application](#deploy-application)
+
         
 # godemo
 
