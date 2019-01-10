@@ -34,17 +34,7 @@ Create a minikube environmnent
 
 ```
 minikube start --vm-driver kvm2 --cpus 2 --memory 4096 
-minikube addons enable ingress
 helm init
-```
-
-Install charts
-
-```
-helm repo add incubator http://storage.googleapis.com/kubernetes-charts-incubator
-helm repo update
-helm install --namespace kube-system stable/docker-registry --name docker-registry --set persistence.enabled=true,persistence.storageClass=standard
-helm install --namespace kube-system incubator/kube-registry-proxy --name docker-registry-proxy --set registry.host=docker-registry,registry.port=5000,hostPort=5000
 ```
 
 ## Getting started
