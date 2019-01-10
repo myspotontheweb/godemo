@@ -5,11 +5,8 @@ Table of Contents
    * [go-demo](#go-demo)
       * [Install pre-requiste tools](#install-pre-requiste-tools)
       * [Start a Kubernetes cluster](#start-a-kubernetes-cluster)
-      * [Build the project](#build-the-project)
-         * [Enable ingress](#enable-ingress)
-
-Created by [gh-md-toc](https://github.com/ekalinin/github-markdown-toc)
-
+      * [Getting started](#getting-started)
+        
 # go-demo
 
 Dummy project to demonstrate local kubernetes development using minikube
@@ -29,8 +26,6 @@ rm -rf $(helm home)/starters/teamwork/.git
 ```
 
 ## Start a Kubernetes cluster
-
-Create a minikube environmnent 
 
 ```
 minikube start --vm-driver kvm2 --cpus 2 --memory 4096 
@@ -56,13 +51,4 @@ App should be available via a port mapping
 
 - http://localhost:8080
 
-# Miscellaneous
-
-## Registry port forwarding
-
-In order to push images from the local docker to registry running on minikube.
-
-```
-kubectl -n kube-system port-forward deployment/docker-registry 5000:5000
-```
 
