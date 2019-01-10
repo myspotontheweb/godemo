@@ -92,6 +92,7 @@ kubectl -n kube-system port-forward deployment/docker-registry 5000:5000
 and run Skaffold to build and deploy the code
 
 ```
+make
 TILLER_NAMESPACE=default skaffold dev --profile hosted
 ```
 
