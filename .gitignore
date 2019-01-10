@@ -2,3 +2,4 @@ Dockerfile
 chart/
 .travis.yml
 *.swp
+skaffold.yaml

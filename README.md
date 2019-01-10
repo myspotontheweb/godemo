@@ -52,44 +52,19 @@ helm install --namespace kube-system incubator/kube-registry-proxy --name docker
 Configure environment to use docker inside the minikube VM
 
 ```
-make
 eval $(minikube docker-env)
 ```
 
 Run a Dev session
 
 ```
+make
 skaffold dev
 ```
 
 App should be available via a port mapping
 
 - http://localhost:8080
-
-### Enable ingress
-
-Edit the skaffold file to define the basedomain supported by minikube
-
-```
-cat << END > skaffold.yaml
-apiVersion: skaffold/v1alpha5
-kind: Config
-build:
-  artifacts:
-  - image: go-demo
-deploy:
-  helm:
-    releases:
-      - name: go-demo
-        chartPath: chart
-        namespace: default
-        values:
-          image.name: go-demo
-        setValues:
-          ingress.enabled: true
-          basedomain: $(minikube ip).nip.io
-END
-```
 
 # Miscellaneous
 
