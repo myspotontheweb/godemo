@@ -39,15 +39,10 @@ helm init
 
 ## Running skaffold
 
-Generate additional files
-
-```
-make
-```
-
 Run a Dev session
 
 ```
+make
 skaffold dev
 ```
 
