@@ -3,7 +3,7 @@ Table of Contents
 =================
 
    * [Table of Contents](#table-of-contents)
-   * [godemo](#godemo)
+   * [Quickstart](#quickstart)
       * [Install pre-requiste tools](#install-pre-requiste-tools)
       * [Start a Kubernetes cluster](#start-a-kubernetes-cluster)
       * [Getting started](#getting-started)
@@ -12,7 +12,7 @@ Table of Contents
       * [Deploy application](#deploy-application)
 
         
-# godemo
+# Quickstart
 
 Dummy project to demonstrate local kubernetes development using minikube
 
