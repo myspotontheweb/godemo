@@ -18,7 +18,7 @@ Dummy project to demonstrate local kubernetes development using minikube
 - [helm](https://docs.helm.sh/using_helm/#installing-helm)
 - [Skaffold](https://github.com/GoogleContainerTools/skaffold#installation)
 
-Install the helm starter repo
+Install the [helm starter repo](https://github.com/Teamwork/helm-teamwork-starter)
 
 ```
 git clone git@github.com:Teamwork/helm-teamwork-starter.git $(helm home)/starters/teamwork
